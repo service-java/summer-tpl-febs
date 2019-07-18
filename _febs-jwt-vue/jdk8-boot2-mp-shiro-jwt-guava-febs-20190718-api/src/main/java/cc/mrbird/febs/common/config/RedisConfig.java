@@ -25,13 +25,13 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.time.Duration;
 import java.util.Arrays;
 
 @Configuration
-
 public class RedisConfig extends CachingConfigurerSupport {
 
     @Value("${spring.redis.host}")
@@ -66,6 +66,8 @@ public class RedisConfig extends CachingConfigurerSupport {
             return new JedisPool(jedisPoolConfig, host, port, timeout, null, database);
         }
     }
+
+
 
     @Bean
     JedisConnectionFactory jedisConnectionFactory() {
